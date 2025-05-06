@@ -12,5 +12,3 @@ jobs:
         run: |
           pwd
           ls -lart
-          cd ./github_actions_demo_2025
-          ls -lart
