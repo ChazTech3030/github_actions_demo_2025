@@ -13,4 +13,4 @@ jobs:
       - name: Investigate Repo
         run: |
           pwd
-          tree
+          tree -a
