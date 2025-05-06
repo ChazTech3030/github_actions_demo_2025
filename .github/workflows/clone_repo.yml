@@ -9,7 +9,7 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v4
       - name: Install Tree
-        run: apt install tree -y
+        run: sudo apt install tree -y
       - name: Investigate Repo
         run: |
           pwd
