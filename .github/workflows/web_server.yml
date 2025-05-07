@@ -2,7 +2,7 @@ name: Deploying Multiple Runners
 on: workflow_dispatch
 
 jobs:
-  clone-website-and-run-podman:
+  clone-website-and-test-service:
     runs-on: ubuntu-latest
 
     steps:
@@ -26,5 +26,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      needs: [clone-website-and-test-service]
       - name: Ping The Service
         run: ping 8.8.8.8 -n 100
