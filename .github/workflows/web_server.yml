@@ -1,4 +1,4 @@
-name: GitHub Actions On Push
+name: Deploying Multiple Runners
 on: workflow_dispatch
 
 jobs:
