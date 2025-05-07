@@ -11,7 +11,11 @@ jobs:
         run: git clone https://github.com/AH-BM/NG-Website
       - name: Move Website Files
         run: sudo mv ./NG-Website/* /usr/share/nginx/html/
+      - name: Check Website Files
+        run: ls -lart /usr/share/nginx/html/
       - name: Start Nginx Service
         run: sudo systemctl start nginx
+      - name: Check Nginx Service
+        run: sudo systemctl status nginx
       - name: Test Web Service
         run: python3 -c "import requests; r=requests.get('http://localhost:8080');print(r.status_code)"
