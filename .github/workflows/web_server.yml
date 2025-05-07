@@ -22,8 +22,15 @@ jobs:
         # run: curl localhost:80
         run: python3 -c "import requests; r=requests.get('http://localhost:80');print(r.status_code)"
 
+  any-old-job-demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: General Echo
+        run: echo "Hello world!"
+
   testing-api-availability:
-    needs: [clone-website-and-test-service]
+    needs: [clone-website-and-test-service,any-old-job-demo]
     runs-on: ubuntu-latest
 
     steps:
