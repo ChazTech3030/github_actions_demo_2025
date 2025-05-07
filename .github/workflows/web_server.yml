@@ -13,8 +13,10 @@ jobs:
         run: sudo mv ./NG-Website/* /usr/share/nginx/html/
       - name: Check Website Files
         run: ls -lart /usr/share/nginx/html/
-      - name: Start Nginx Service
-        run: sudo systemctl start nginx
+      - name: Start And Enable Nginx Service
+        run: |
+          sudo systemctl enable nginx
+          sudo systemctl start nginx
       - name: Check Nginx Service
         run: sudo systemctl status nginx
       - name: Test Web Service
